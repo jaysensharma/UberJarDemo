@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>middleware.magic</groupId>
-  <artifactId>Uber_Demo</artifactId>
-  <version>1.0</version>
+  <artifactId>xyz-thing-service</artifactId>
+  <version>1.0.5-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>TestWebApp</name>
+  <name>xyz-thing-service</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,10 +63,13 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.4.1</version>
         <configuration>
-          <!-- get all project dependencies -->
+          <outputDirectory>${project.build.directory}/docker/abcd.example.amazonaws.com/xyz-thing-service/1.0.5-SNAPSHOT/build/maven/</outputDirectory>
+          <!-- get all project dependencies-->
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
+          <finalName>xyz-thing-service</finalName>
+          <appendAssemblyId>false</appendAssemblyId>
         </configuration>
         <executions>
           <execution>
